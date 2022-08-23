@@ -3,3 +3,5 @@
 dir=$(pwd)
 
 ln -sf ${dir}/.mbsyncrc ~/.mbsyncrc
+mkdir -p ~/.config/kitty
+ln -sf ${dir}/kitty.conf ~/.config/kitty/kitty.conf
