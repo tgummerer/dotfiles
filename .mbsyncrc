@@ -1,0 +1,28 @@
+IMAPAccount github
+Host imap.gmail.com
+User tgummerer@github.com
+PassCmd "/usr/bin/age --decrypt -i /home/tgummerer/.agekey /home/tgummerer/.mail/pass-github.age"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore github-remote
+Account github
+
+MaildirStore github-local
+SubFolders Verbatim
+Path ~/.mail/github/
+Inbox ~/.mail/gmail/Inbox
+
+Channel github
+Far :github-remote:
+Near :github-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Sync the movement of messages between folders and deletions, add after making sure the sync works
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
