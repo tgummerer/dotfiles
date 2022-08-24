@@ -15,3 +15,5 @@ fi
 source ${ZIM_HOME}/init.zsh
 
 alias g=git
+
+eval "$(zoxide init zsh --hook pwd)"
