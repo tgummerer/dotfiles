@@ -15,5 +15,18 @@ fi
 source ${ZIM_HOME}/init.zsh
 
 alias g=git
+alias gl="git log --oneline --graph--decorate"
+alias gs="git status -s"
+alias gc="git commit"
+alias gcne="git commit --amend --no-edit"
+alias gpf="git push --force-with-lease"
+alias ga="git add -A -p"
+alias gg="git ack"
+alias grc="git rebase --continue"
+alias et="emacsclient -c"
+alias en="emacsclient -n"
+alias xen="xargs emacsclient -n"
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"
 
 eval "$(zoxide init zsh --hook pwd)"
