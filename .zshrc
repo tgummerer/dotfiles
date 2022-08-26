@@ -30,3 +30,6 @@ alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
 
 eval "$(zoxide init zsh --hook pwd)"
+
+ssh-add -k
+export TERM=xterm-256color
